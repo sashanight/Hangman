@@ -8,10 +8,10 @@ MISTAKES_COUNT_CONSTANT = 8
 def create_bag_of_vocabulary_words():
     """
     Form the array of words which can be conceived during the game.
-    This words are stored in ./vocabulary.txt
+    This words are stored in hangman/vocabulary.txt
     """
     words_array = []
-    file_object = open("./vocabulary.txt")
+    file_object = open("./hangman/vocabulary.txt")
     for line in file_object:
         for word in line.split():
             words_array.append(word)
@@ -81,11 +81,12 @@ def game_process(word, available_mistakes_count):
         print("You are won \n")
 
 
-def main():
+def start_the_game():
     """Encapsulate all work of application."""
     bag_of_words = create_bag_of_vocabulary_words()
     chosen_word = choose_the_word(bag_of_words)
     game_process(chosen_word, MISTAKES_COUNT_CONSTANT)
 
+
 if __name__ == "__main__":
-    main()
+    start_the_game()
