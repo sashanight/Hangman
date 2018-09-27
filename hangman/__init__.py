@@ -11,7 +11,7 @@ def create_bag_of_vocabulary_words():
     This words are stored in hangman/vocabulary.txt
     """
     words_array = []
-    file_object = open("./hangman/vocabulary.txt")
+    file_object = open("./vocabulary.txt")
     for line in file_object:
         for word in line.split():
             words_array.append(word)
