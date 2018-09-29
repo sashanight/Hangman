@@ -2,6 +2,7 @@
 """The module play hangman console game with user."""
 
 import random
+
 MISTAKES_COUNT_CONSTANT = 8
 
 
@@ -25,7 +26,7 @@ def choose_the_word(vocabulary_array):
     Keyword arguments:
         vocabulary_array  - array of words from which to choose
     """
-    word_index = random.randint(0, len(vocabulary_array))
+    word_index = random.randint(0, len(vocabulary_array) - 1)
     word = vocabulary_array[word_index]
     return word
 
@@ -81,12 +82,12 @@ def game_process(word, available_mistakes_count):
         print("You are won \n")
 
 
-def start_the_game():
+def start_the_game():  # pragma: no cover
     """Encapsulate all work of application."""
     bag_of_words = create_bag_of_vocabulary_words()
     chosen_word = choose_the_word(bag_of_words)
     game_process(chosen_word, MISTAKES_COUNT_CONSTANT)
 
 
-if __name__ == "__main__":
-    start_the_game()
+# if __name__ == "__main__":
+#     start_the_game()
